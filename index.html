@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday Lulu ❤️</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+body{min-height:100vh;overflow:hidden;display:grid;place-items:center;color:#fff7fb;
+background:radial-gradient(circle at 50% 20%,#65306f 0,#32153f 42%,#160d28 100%)}
+.card{position:relative;z-index:2;width:min(92vw,520px);padding:34px 22px 38px;text-align:center;
+border:1px solid #ffd58b88;border-radius:28px;background:#ffffff12;backdrop-filter:blur(8px);
+box-shadow:0 0 45px #ff72b855,inset 0 0 30px #ffffff0b}
+.kicker{letter-spacing:.22em;color:#ffd98f;font-size:12px;font-weight:700}
+h1{font-size:clamp(34px,10vw,58px);line-height:1.05;margin:18px 0 8px;color:#ffe2a8;
+text-shadow:0 0 12px #ff8fc9,0 0 32px #ff5ca8;animation:pulse 1.8s infinite}
+.name{font-size:clamp(42px,13vw,72px);font-weight:900;color:#ff9ecb;text-shadow:0 0 22px #ff4f9b}
+p{font-size:17px;line-height:1.6;margin:18px auto 0;max-width:390px}
+.cake{font-size:78px;margin:14px 0;animation:bob 2s ease-in-out infinite}
+button{margin-top:22px;border:0;border-radius:999px;padding:14px 25px;font-size:16px;font-weight:800;
+color:#3b173d;background:linear-gradient(135deg,#fff0b8,#ff9ecb);box-shadow:0 5px 25px #ff75bd66}
+.float{position:fixed;bottom:-60px;z-index:1;animation:rise linear infinite;opacity:.8;pointer-events:none}
+.confetti{position:fixed;top:-20px;width:9px;height:14px;animation:fall linear infinite;opacity:.85}
+@keyframes pulse{50%{transform:scale(1.05)}}
+@keyframes bob{50%{transform:translateY(-12px) rotate(4deg)}}
+@keyframes rise{to{transform:translateY(-115vh) rotate(360deg);opacity:0}}
+@keyframes fall{to{transform:translateY(115vh) rotate(720deg)}}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="kicker">A LITTLE SURPRISE JUST FOR YOU</div>
+  <h1>HAPPY BIRTHDAY</h1>
+  <div class="name">LULU ❤️</div>
+  <div class="cake">🎂</div>
+  <p>May your day be filled with smiles, laughter, endless love and beautiful memories. You deserve all the happiness in the world! 💖</p>
+  <button onclick="celebrate()">TAP FOR MORE LOVE 💝</button>
+  <p id="wish" aria-live="polite" style="font-weight:800;color:#ffe2a8"></p>
+</div>
+<script>
+const emojis=['💗','💖','💕','❤️','✨','🎈','🌸'];
+for(let i=0;i<26;i++){
+ const e=document.createElement('div');e.className='float';e.textContent=emojis[i%emojis.length];
+ e.style.left=Math.random()*100+'vw';e.style.animationDuration=(7+Math.random()*9)+'s';
+ e.style.animationDelay=(-Math.random()*14)+'s';e.style.fontSize=(18+Math.random()*22)+'px';document.body.append(e);
+}
+const colors=['#ffd166','#ff70ad','#b8a1ff','#ffffff','#7cebd5'];
+for(let i=0;i<70;i++){
+ const c=document.createElement('i');c.className='confetti';c.style.left=Math.random()*100+'vw';
+ c.style.background=colors[i%colors.length];c.style.animationDuration=(4+Math.random()*6)+'s';
+ c.style.animationDelay=(-Math.random()*8)+'s';document.body.append(c);
+}
+function celebrate(){
+ document.getElementById('wish').textContent='YOU ARE SO SPECIAL, LULU! 🥰🎉';
+ for(let i=0;i<18;i++){const e=document.createElement('div');e.className='float';e.textContent='💖';
+ e.style.left=(35+Math.random()*30)+'vw';e.style.animationDuration='3s';document.body.append(e);
+ setTimeout(()=>e.remove(),3200);}
+}
+</script>
+</body></html>
